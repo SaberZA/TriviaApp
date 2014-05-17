@@ -10,9 +10,13 @@ var MongoClient = require('mongodb').MongoClient
 
 var DEFAULT_PORT = 1337;
 
+var logger = require('morgan');
+
+app.use(logger());
 app.use('/audio', express.static('../app/media/wowPlaces/'));
 
-app.post('/', function(req, res) {
+
+    app.post('/', function(req, res) {
     var body = '';
 
     req.on('data', function(chunk) {
