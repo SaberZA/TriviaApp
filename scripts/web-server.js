@@ -11,7 +11,7 @@ var util = require('util'),
     url = require('url'),
     events = require('events');
 
-var DEFAULT_PORT = 6969;
+var DEFAULT_PORT = 8000;
 
 function main(argv) {
     new HttpServer({
@@ -95,7 +95,8 @@ StaticServlet.MimeMap = {
     'jpeg':'image/jpeg',
     'gif':'image/gif',
     'png':'image/png',
-    'svg':'image/svg+xml'
+    'svg':'image/svg+xml',
+    'mp3':'audio/mpeg'
 };
 
 StaticServlet.prototype.handleRequest = function (req, res) {

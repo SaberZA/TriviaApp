@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="triviaApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Trivia App</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/darkstrap.min.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div class="container">
+    <div ng-controller="triviaController">
+        <div class="navbar">
+            <div class="navbar-inner">
+                <ul class="nav">
+                    <li class="navbar-brand" href="#">WoW Trivia</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Welcome to WoW Trivia!</h2>
+                <p>Answer with the locations that match the respective audio clips.</p>
+                <p>Enter your name at the end before you submit. Mobile browsers not supported.</p>
+
+            </div>
+        </div>
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="triviaItems">
+                        <div ng-repeat="place in trivia.places">
+                            <audio controls preload="none"><source src="{{place.serverFile}}"> </audio><br />
+                            <label>Answer{{place.id}}: <input type="text" ng-model="place.answer"/></label>
+                            <hr>
+                        </div>
+                        </div>
+                    </div>
+                <div id="headerImg" class="col-lg-5">
+                    <img src="media/wowTavern.jpg">
+                </div>
+                </div>
+
+
+        <label>Your Name: <input type="text" ng-model="trivia.user"/></label>
+        <button class="btn-primary" ng-click="submit()">Submit</button>
+        </div>
+        <br />
+    </div>
+</div>
+<script src="lib/angular/angular.min.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="lib/howler.min.js"></script>
+<script src="lib/jquery-2.1.1.min.js"></script>
+<script src="lib/bootstrap.min.js"></script>
+<script src="lib/underscore.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controllers/triviaController.js"></script>
+</body>
+</html>
