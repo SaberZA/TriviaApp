@@ -1,0 +1,9 @@
+1 - Tavern
+2 - Stormwind
+3 - Orgrimmar
+4 - Undercity
+5 - ThunderBluff
+6 - Darnassus
+7 - Ironforge
+8 - Strangethron Vale
+9 - Tanaris

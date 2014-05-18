@@ -4,10 +4,6 @@
 var publicAddress = 'http://saberza.blogdns.com:1337';
 triviaApp.controller('triviaController',
     function appController($scope, validateUrl){
-        var sound = new Howl({
-            urls: ['']
-        });
-
         $scope.trivia = {
             heading: 'Welcome to WoW Trivia!',
             places: [
@@ -24,9 +20,6 @@ triviaApp.controller('triviaController',
             user: ''
         };
 
-        $scope.trustAudioLink = function(place) {
-            return  'http://saberza.blogdns.com:1337/audio/1.mp3';
-        };
 
         $scope.submit = function() {
             $.ajax({
