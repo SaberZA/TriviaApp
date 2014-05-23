@@ -1,5 +1,4 @@
 //   Created by Steven on 2014-05-18.
-//   Created by Steven on 2014-05-17.
 doctype html
 html
     head
@@ -7,20 +6,16 @@ html
         link(rel="stylesheet", href="css/app.css")
         link(rel="stylesheet", href="css/darkstrap.min.css")
     body(ng-app='app')
-        .container
-            .navbar-inner(role="navigation")
-                .container-fluid
-                    .navbar-header
-                        .navbar-brand WoW Trivia
-                    ul.nav.navbar-nav
-                        li
-                            a Link1
-                        li
-                            a Link2
-            block main-content
+        .navbar-inner(role="navigation")
+            .container
+                .navbar-header
+                    a.navbar-brand(href="http://saberza.blogdns.com:1337") WoW Trivia
+                ul.nav.navbar-nav
+                    li
+                        a(href="/submissions") WoW Submissions
+                    li
+                        a(href='/dotaMatches') Dota Matches
+        block main-content
 
-        include scripts
-
-
-
-
+    include scripts
+    block controllerScript

@@ -1,0 +1,11 @@
+//   Created by Steven on 2014-05-18.
+.container
+    h2 WoW Trivia Submissions
+    table.table
+        thead
+            th(ng-repeat="header in submissions.headers")
+                strong {{header}}
+        tbody
+            tr(ng-repeat="result in submissions.results")
+                td(ng-repeat="value in result")
+                    p {{value}}

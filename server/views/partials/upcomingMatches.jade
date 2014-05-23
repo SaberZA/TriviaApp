@@ -1,0 +1,22 @@
+//   Created by Steven on 2014-05-20.
+.container
+    h1#test Dota Matches
+    button.btn-primary(ng-click='getUpcomingDotaMatches()') Refresh
+    table.table.table-responsive
+        thead
+            tr
+                th Team 1
+                th Team 2
+                th Live in
+                th Link
+            tr(ng-repeat="match in upcomingMatches")
+                td
+                    div(ng-class='{{match.team1Classes}}') {{match.Team1}}
+                td
+                    div(ng-class='{{match.team2Classes}}') {{match.Team2}}
+                td
+                    div {{match.Time}}
+                td
+                    a(href='{{match.Link}}') Link
+
+
