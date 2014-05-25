@@ -21,10 +21,8 @@ loadPlayers();
 setInterval(function() {
     loadAllDotaMatches();
     loadPlayers();
-//},10000);
 },(1000 * 60) * 10);
 
-//loadAllDotaMatches();
 
 app.set('views', __dirname + '/server/views');
 app.set('view engine','jade');
