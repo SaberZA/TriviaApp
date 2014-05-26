@@ -11,7 +11,7 @@ var express = require('express'),
     cheerio = require('cheerio');
 var app = express();
 
-var ENABLE_PROFILES = false;
+var ENABLE_PROFILES = true;
 var matches = {};
 matches.upcomingMatches = new Array();
 
@@ -62,8 +62,7 @@ app.post('/upcomingMatches',function(req,res){
         MongoClient.connect('mongodb://127.0.0.1:27017/test', function(err, db) {
             if (err) throw err;
             var collection = db.collection('players');
-            var players = ["steve","jarrod","wayne","daryl","james","johan","specialK"];
-            var players = ["steve"];
+            var players = ["steve","jarrod","wayne","daryl","james","johan","k"];
 
             players.forEach(function(player) {
                 collection.findOne({name: player}, function (err, doc) {
@@ -328,7 +327,7 @@ function loadPlayers(){
             if(err) throw err;
 
             var collection = db.collection('players');
-            var players = ["steve"];
+            var players = ["steve","jarrod","james","johan","wayne","daryl","specialK"];
             console.log(matches.upcomingMatches.length);
             players.forEach(function(player) {
                 collection.findOne({name: player}, function(err, doc) {
